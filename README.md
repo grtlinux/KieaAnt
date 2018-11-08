@@ -2,7 +2,7 @@ KieaAnt
 =======
 Ant project informations
 
-<pre>
+```xml
 	<project>
 	    <target name="clean">
 	        <delete dir="build"/>
@@ -27,7 +27,7 @@ Ant project informations
 	    </target>
 
 	</project>
-</pre>
+```
 
 References
 ----------
