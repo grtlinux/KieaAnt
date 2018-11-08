@@ -133,7 +133,7 @@ Tutorial: Hello world with Apache Ant
 References
 ----------
 > [Tutorial: Hello World with Apache Ant](https://ant.apache.org/manual/tutorial-HelloWorldWithAnt.html "Tutorial: Hello World with Apache Ant")
-> []( "")
+> [6. Resources](https://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/resources.html "6. Resources")
 > []( "")
 > []( "")
 > []( "")
