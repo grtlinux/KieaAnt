@@ -4,6 +4,7 @@
 	<property name="src.dir" value="src"/>
 	<property name="lib.dir" value="lib"/>
 	<property name="classes.dir" value="classes"/>
+	<property name="java.encoding" value="utf-8"/>
 	
 	<path id="jarpath">
 		<fileset dir="${lib.dir}">
@@ -11,12 +12,15 @@
 		</fileset>
 	</path>
 	
+	<!-- init -->
 	<target name="init" description="작업디렉토리를 초기화합니다.">
 		<delete dir="${classes.dir}"/>
 		<mkdir dir="${classes.dir}"/>
 	</target>
 	
+	<!-- compile -->
 	<target name="compile" depends="init" description="컴파일합니다">
+		<!-- javac destdir="${classes.dir}" classpathref="jarpath" encoding="${java.encoding}" debug="on" debuglevel="lines,vars,source" includeantruntime="false" -->
 		<javac destdir="${classes.dir}" classpathref="jarpath" debug="on" debuglevel="lines,vars,source" includeantruntime="false">
 			<src path="${src.dir}"/>
 		</javac>
@@ -27,8 +31,19 @@
 		</copy>
 	</target>
 	
+	<!-- run -->
 	<target name="run.sample1" depends="compile" description="어플리케이션을 기동합니다.">
 		<java classname="sample1.HelloApp" classpath="${classes.dir}" classpathref="jarpath" fork="true"/>
+	</target>
+	
+	<target name="run.sample2" depends="compile" description="어플리케이션을 기동합니다.">
+		<java classname="sample2.HelloApp" classpath="${classes.dir}" classpathref="jarpath" fork="true">
+			<jvmarg value="-Dfile.encoding=UTF-8"/>
+		</java>
+	</target>
+	
+	<target name="run.sample3" depends="compile" description="어플리케이션을 기동합니다.">
+		<java classname="sample3.HelloApp" classpath="${classes.dir}" classpathref="jarpath" fork="true"/>
 	</target>
 </project>
 
