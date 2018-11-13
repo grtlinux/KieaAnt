@@ -43,7 +43,9 @@
 	</target>
 	
 	<target name="run.sample3" depends="compile" description="어플리케이션을 기동합니다.">
-		<java classname="sample3.HelloApp" classpath="${classes.dir}" classpathref="jarpath" fork="true"/>
+		<java classname="sample3.HelloApp" classpath="${classes.dir}" classpathref="jarpath" fork="true">
+			<jvmarg value="-Dfile.encoding=UTF-8"/>
+		</java>
 	</target>
 </project>
 
